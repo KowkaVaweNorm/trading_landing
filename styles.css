@@ -23,6 +23,7 @@
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
+  scrollbar-gutter: stable both-edges;
 }
 
 body {
@@ -83,12 +84,17 @@ a:hover {
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  display: grid;
-  place-items: start center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  pointer-events: none;
 }
 
 .hero__media picture {
-  display: contents;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
 }
 
 .hero__media::after {
@@ -106,9 +112,11 @@ a:hover {
 }
 
 .hero__logo {
+  display: block;
   width: min(100%, 52rem);
+  max-width: 100%;
   max-height: min(58svh, 42rem);
-  margin: 0 auto;
+  margin-inline: auto;
   object-fit: contain;
   object-position: center top;
   image-rendering: -webkit-optimize-contrast;
@@ -342,14 +350,14 @@ a:hover {
   color: var(--gold-deep);
 }
 
-/* Motion — без filter/blur, только opacity + translate */
+/* Motion — без filter/blur, только opacity + translate (не transform) */
 .hero__logo,
 .hero__brand,
 .hero__title,
 .hero__lead,
 .hero__cta {
   opacity: 0;
-  transform: translateY(14px);
+  translate: 0 14px;
   animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
@@ -375,7 +383,7 @@ a:hover {
 
 .link-list li {
   opacity: 0;
-  transform: translateY(10px);
+  translate: 0 10px;
 }
 
 .link-list.is-visible li {
@@ -386,7 +394,7 @@ a:hover {
 @keyframes rise {
   to {
     opacity: 1;
-    transform: translateY(0);
+    translate: 0 0;
   }
 }
 
@@ -522,7 +530,7 @@ a:hover {
   .link-list li,
   .link-list.is-visible li {
     opacity: 1;
-    transform: none;
+    translate: none;
     animation: none;
   }
 
