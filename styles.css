@@ -87,17 +87,22 @@ a:hover {
   place-items: start center;
 }
 
+.hero__media picture {
+  display: contents;
+}
+
 .hero__media::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(5, 5, 5, 0.2) 0%,
-    rgba(5, 5, 5, 0.45) 40%,
-    rgba(5, 5, 5, 0.9) 76%,
+    rgba(5, 5, 5, 0.05) 0%,
+    rgba(5, 5, 5, 0.2) 48%,
+    rgba(5, 5, 5, 0.78) 78%,
     var(--bg) 100%
   );
+  pointer-events: none;
 }
 
 .hero__logo {
@@ -106,7 +111,7 @@ a:hover {
   margin: 0 auto;
   object-fit: contain;
   object-position: center top;
-  opacity: 0.95;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .hero__copy {
@@ -497,9 +502,10 @@ a:hover {
     font-size: 1.28rem;
   }
 
+  /* Cap CSS size so retina 4K stays within 4096 source pixels */
   .hero__logo {
-    width: min(100%, 72rem);
-    max-height: min(68svh, 62rem);
+    width: min(100%, 64rem);
+    max-height: min(64svh, 56rem);
   }
 }
 

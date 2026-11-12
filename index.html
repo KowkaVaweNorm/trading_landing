@@ -17,15 +17,15 @@
       property="og:description"
       content="Теханализ на основе новостного контекста. Зона интереса — MOEX. Подпишитесь в MAX и Telegram."
     />
-    <meta property="og:image" content="./assets/logo.jpg" />
+    <meta property="og:image" content="./assets/logo.png" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="Душный трейдинг | MOEX" />
     <meta
       name="twitter:description"
       content="Теханализ на основе новостного контекста. Зона интереса — MOEX."
     />
-    <meta name="twitter:image" content="./assets/logo.jpg" />
-    <link rel="icon" href="./assets/logo.jpg" type="image/jpeg" />
+    <meta name="twitter:image" content="./assets/logo.png" />
+    <link rel="icon" href="./assets/logo.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,13 +39,18 @@
 
     <header class="hero">
       <div class="hero__media">
-        <img
-          class="hero__logo"
-          src="./assets/logo.jpg"
-          width="280"
-          height="280"
-          alt="Логотип Душный трейдинг | MOEX"
-        />
+        <picture>
+          <source srcset="./assets/logo.webp" type="image/webp" />
+          <img
+            class="hero__logo"
+            src="./assets/logo.png"
+            width="1024"
+            height="1024"
+            alt="Логотип Душный трейдинг | MOEX"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </picture>
       </div>
       <div class="hero__copy">
         <h1 class="hero__brand">Душный трейдинг | MOEX</h1>
